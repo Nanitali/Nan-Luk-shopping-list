@@ -1,15 +1,15 @@
 h1{
-    font-family: 'Pacifico', cursive;  
+    font-family: 'Sumana', serif;
     color: rgba(192, 192, 192, 0.9);
     font-size: 60px;
 }
 h2{
-  font-family: 'Pacifico', cursive;  
+  font-family: 'Sumana', serif;
   color: rgba(36, 31, 31, 0.849);
   font-size: 40px;
 }
 h3{
-  font-family: 'Pacifico', cursive;  
+  font-family: 'Sumana', serif;
   color: rgba(36, 31, 31, 0.849);
   font-size: 25px;
 }
@@ -40,7 +40,7 @@ body {
 }
 
 
-p {
+p,h4 {
     font-family: 'Indie Flower', cursive;
     font-size: 20px;
     font-weight: 600;
@@ -79,3 +79,20 @@ ul {
     margin-left: 20%;
     margin-right: 20%
   }
+  #rubbish{
+      border-radius: 20px
+  }
+  .spin {
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin:auto;
+  -webkit-animation:spin 15s linear infinite;
+  -moz-animation:spin 15s linear infinite;
+  animation:spin 15s linear infinite;
+  padding:0;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(30deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(30deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(30deg); transform:rotate(30deg); } }

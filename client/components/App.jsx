@@ -2,7 +2,7 @@ import React from 'react'
 
 import Weather from './Weather'
 
-
+import { Button } from 'semantic-ui-react'
 
 let today = new Date()
 let dd = String(today.getDate()).padStart(2, '0')
@@ -25,12 +25,12 @@ export default class App extends React.Component {
 
     if(isOnTheList){
       this.setState({
-        message:'Item alreay in the trolley!'
+        message:`${newItem} alreay in the trolley!`
       })
     }else{
-    newItem !==''&& this.setState({
+    newItem !=='' &&  this.setState({
       buyItems:[...this.state.buyItems,newItem],
-      message:''
+      message: ' '
     })
    }
     this.addForm.reset()
@@ -72,13 +72,13 @@ export default class App extends React.Component {
         <Weather/>
       <hr />
       <header>
-      <img src='https://cdn0.iconfinder.com/data/icons/shopping-76/100/Artboard_18-512.png'/> 
+      <img src='https://cdn0.iconfinder.com/data/icons/shopping-76/100/Artboard_18-512.png' className='spin'/> 
         <h1>Shopping Bag!</h1>
         <form ref={input=>this.addForm=input} className='form-inline' onSubmit={(e)=>{this.addItem(e)}}> 
           <div className ='form-group'>
           <label className='sr-only' htmlFor ='newItemInput'>Need to buy:</label>
           <br/>
-          <input ref={input=>this.newItem=input} type ='text' placeholder ='item name' className='form-control' id='newItemInput'/>
+          <input ref={input=>this.newItem=input} type ='text' placeholder ='Start add...' className='form-control' id='newItemInput'/>
           </div>
           <button type ='submit' className='btn btn-primary btn-sm'><img src ='https://hotemoji.com/images/emoji/r/1j2kh57f6987r.png' height="25" width="25"/> add to trolley</button>
         </form>
@@ -94,17 +94,17 @@ export default class App extends React.Component {
         <tr >
           <th>Qty</th>
           <th>Item</th>
-          <th>Acution</th>
+          <th>&nbsp;</th>
         </tr>
       </thead>
       <tbody>  
          {buyItems.map(item =>{
           return (
           <tr key ={item}>
-          <th scope="row">1</th>
+          <td scope="row"><input type="number" min={1} max={100}/></td>
           <td>{item}</td>
           <td className ='test-right'>
-            <button onClick={(e)=>this.removeItem(item)} type='button' className='btn btn-default btn-sm'>remove from trolley</button></td>
+            <Button size='mini' secondary onClick={(e)=>this.removeItem(item)} type='button' className='btn btn-default btn-sm' id ='rubbish'><img src ='https://cdn0.iconfinder.com/data/icons/energy-technology-glyph-black/2048/285_-_Recycle_Bin-512.png' height="30" width="30"/></Button></td>
         </tr>
           )
         

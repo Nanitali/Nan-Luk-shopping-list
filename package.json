@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
+    "semantic-ui-react": "^0.86.0",
     "superagent": "^5.0.2"
   },
   "devDependencies": {
