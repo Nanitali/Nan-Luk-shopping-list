@@ -73,10 +73,10 @@ export default class App extends React.Component {
       <hr />
       <header>
       <img src='https://cdn0.iconfinder.com/data/icons/shopping-76/100/Artboard_18-512.png' className='spin'/> 
-        <h1>Shopping Bag!</h1>
+        <h1>Shopping List!</h1>
         <form ref={input=>this.addForm=input} className='form-inline' onSubmit={(e)=>{this.addItem(e)}}> 
           <div className ='form-group'>
-          <label className='sr-only' htmlFor ='newItemInput'>Need to buy:</label>
+          <label className='sr-only' htmlFor ='newItemInput'><h4>Need to buy:</h4></label>
           <br/>
           <input ref={input=>this.newItem=input} type ='text' placeholder ='Start add...' className='form-control' id='newItemInput'/>
           </div>
@@ -97,6 +97,7 @@ export default class App extends React.Component {
           <th>&nbsp;</th>
         </tr>
       </thead>
+      
       <tbody>  
          {buyItems.map(item =>{
           return (
@@ -104,7 +105,7 @@ export default class App extends React.Component {
           <td scope="row"><input type="number" min={1} max={100}/></td>
           <td>{item}</td>
           <td className ='test-right'>
-            <Button size='mini' secondary onClick={(e)=>this.removeItem(item)} type='button' className='btn btn-default btn-sm' id ='rubbish'><img src ='https://cdn0.iconfinder.com/data/icons/energy-technology-glyph-black/2048/285_-_Recycle_Bin-512.png' height="30" width="30"/></Button></td>
+            <Button size='mini' onClick={(e)=>this.removeItem(item)} type='button' className='btn btn-default btn-sm' id ='rubbish' ><img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHFkKHkMohe-Qv_rFVigIXABUvqzg_5CVfPc2Yevtzl4KLGDQDQQ'height="15" width="15"/></Button></td>
         </tr>
           )
         
